@@ -1,2 +1,0 @@
-class Planet < ApplicationRecord
-end

@@ -10,24 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_145749) do
+ActiveRecord::Schema.define(version: 2021_03_09_211442) do
 
-  create_table "characters", force: :cascade do |t|
-    t.string "name"
-    t.integer "planet_id"
-    t.integer "race_id"
-    t.string "occupation"
-    t.text "description"
+  create_table "awards", force: :cascade do |t|
+    t.string "year"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "organization", default: "None"
-    t.string "religion", default: "None"
+    t.string "best_film"
+    t.string "best_director"
+    t.string "best_actor"
+    t.string "best_actress"
+    t.string "best_supporting_actor"
+    t.string "best_supporting_actress"
+    t.string "best_screenplay"
+    t.string "best_cinematography"
+    t.string "best_film_editing"
+    t.string "best_score"
   end
 
-  create_table "planets", force: :cascade do |t|
-    t.string "name"
-    t.string "topography"
-    t.text "description"
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.string "release_year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_145749) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.string "awards_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
