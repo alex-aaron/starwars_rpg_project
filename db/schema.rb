@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_211442) do
+ActiveRecord::Schema.define(version: 2021_03_09_224023) do
+
+  create_table "award_movies", force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "award_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "awards", force: :cascade do |t|
     t.string "year"
@@ -27,6 +34,14 @@ ActiveRecord::Schema.define(version: 2021_03_09_211442) do
     t.string "best_cinematography"
     t.string "best_film_editing"
     t.string "best_score"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "award_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "content"
   end
 
   create_table "movies", force: :cascade do |t|
