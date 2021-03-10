@@ -1,1 +1,24 @@
 <h1>Signup</h1>
+<%= form_for(@user) do |f| %>
+    <div>
+        <%= f.label "Username" %><br>
+        <%= f.text_field :username %><br><br>
+    </div>
+
+    <div>
+        <%= f.label "Email" %><br>
+        <%= f.text_field :email %><br><br>
+    </div>
+
+    <div>
+        <%= f.label "Password" %><br>
+        <%= f.text_field :password %><br><br>
+    </div>
+
+    <div>
+        <%= f.label "Awards Name - Like Oscars or Golden Globes" %><br>
+        <%= f.text_field :awards_name %><br><br>
+    </div>
+    <%= f.submit "Signup" %>
+
+<% end %>

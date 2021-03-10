@@ -20,4 +20,3 @@ award1 = Award.create(year: "1992", user_id: 1,
     best_cinematography: "Baraka",
     best_film_editing: "A Few Good Men",
     best_score: "Last of the Mohicans")
-movie1 = Movie.create(title: "Unforgiven", release_year: 1992)

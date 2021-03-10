@@ -1,0 +1,34 @@
+<h1>Create New Awards</h1>
+<%= form_for(@award) do |f| %>
+    <%= f.label "Year:" %>
+    <%= f.text_field :year %><br><br>
+
+    <%= f.label "Best Film:" %>
+    <%= f.text_field :best_film %><br><br>
+
+    <%= f.label "Best Director:" %>
+    <%= f.text_field :best_director %><br><br>
+
+    <%= f.label "Best Actor:" %>
+    <%= f.text_field :best_actor %><br><br>
+
+    <%= f.label "Best Actress:" %>
+    <%= f.text_field :best_actress %><br><br>
+
+    <%= f.label "Best Supporting Actor:" %>
+    <%= f.text_field :best_supporting_actor %><br><br>
+
+    <%= f.label "Best Screenplay:" %>
+    <%= f.text_field :best_screenplay %><br><br>
+
+    <%= f.label "Best Cinematography:" %>
+    <%= f.text_field :best_cinematography %><br><br>
+
+    <%= f.label "Best Film Editing:" %>
+    <%= f.text_field :best_film_editing %><br><br>
+
+    <%= f.label "Best Score:" %>
+    <%= f.text_field :best_score %><br><br>
+
+    <%= f.submit "Create New Awards" %>
+<% end %>
