@@ -15,41 +15,6 @@
 <h1 class="awards-action-header">Create New Awards</h1>
 <div class="awards-action-container">
     <div class="awards-action-items">
-    <%= form_for(@award) do |f| %>
-      <%= f.label "Year:" %>
-      <%= f.text_field :year, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Film:" %>
-      <%= f.text_field :best_film, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Director:" %>
-      <%= f.text_field :best_director, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Actor:" %>
-      <%= f.text_field :best_actor, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Actress:" %>
-      <%= f.text_field :best_actress, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Supporting Actor:" %>
-      <%= f.text_field :best_supporting_actor, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Supporting Actress:" %>
-      <%= f.text_field :best_supporting_actress, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Screenplay:" %>
-      <%= f.text_field :best_screenplay, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Cinematography:" %>
-      <%= f.text_field :best_cinematography, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Film Editing:" %>
-      <%= f.text_field :best_film_editing, :class => 'awards-action-input' %><br><br>
-
-      <%= f.label "Best Score:" %>
-      <%= f.text_field :best_score, :class => 'awards-action-input' %><br><br>
-
-      <%= f.submit "Submit" %>
-  <% end %>
+    <%= render 'form' %>
     </div>
 </div>

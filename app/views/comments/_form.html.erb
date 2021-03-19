@@ -1,0 +1,5 @@
+<%= form_for(@comment) do |f| %>
+    <%= f.hidden_field :award_id %>
+    <%= f.text_area :content %><br>
+    <%= f.submit "Add Comment" %>
+<% end %>

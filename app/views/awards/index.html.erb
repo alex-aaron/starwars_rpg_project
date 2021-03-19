@@ -1,11 +1,7 @@
 <h1>Awards Homepage</h1>
-<h2>Click on a year to start browsing awards!</h2>
+<p><strong>Click on a year to start browsing awards!</strong></p>
 <div class="award-years-list-container">
-    <div class="award-years-list">
-        <% @year_sorted_awards.each do |year| %>
-            <div class="awards-year-list-item-container">
-                <a href="awards/years/<%= year %>" class="btn btn-info" id="award-years-list-item"><%= year %><a>
-            </div>
-        <% end %>
-    <div>
+     <% @year_sorted_awards.each do |year| %>
+        <a href="awards/years/<%= year %>" class="btn btn-primary"><%= year %><a>
+    <% end %>
 </div>

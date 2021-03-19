@@ -1,8 +1,4 @@
 <h1>Add Comment</h1>
 <h3>Awards Year: <%= @award.year %></h3>
 <h3>Organization: <%= @award_creator.awards_name %></h3>
-<%= form_for(@comment) do |f| %>
-    <%= f.hidden_field :award_id %>
-    <%= f.text_area :content %><br>
-    <%= f.submit "Add Comment" %>
-<% end %>
+<%= render 'form' %>

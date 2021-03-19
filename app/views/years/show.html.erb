@@ -1,9 +1,7 @@
-<h1><%= @year %></h1>
-<ul>
+<h1 class="year-show-header"><%= @year %></h1>
     <% @awards.each do |award| %>
         <% if award.year == @year || award.year == "Sample Awards" %>
         <% user = User.find_by_id(award.user_id) %>
-        <li><%= link_to user.awards_name, award_path(award) %></li>
+        <%= link_to user.awards_name, award_path(award), :class => "btn btn-primary" %>
         <% end %>
     <% end %>
-</ul>

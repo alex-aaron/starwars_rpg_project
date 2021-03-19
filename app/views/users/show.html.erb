@@ -1,7 +1,5 @@
 <h1>Welcome to the <%= @user.awards_name %></h1>
 <h2>Awards Years</h2>
 <% @user_awards.each do |award| %>
-    <div class="user-show-page-award-year">
-        <h3><%= link_to award.year, award_path(award) %></h3>
-    </div>
+    <%= link_to award.year, award_path(award), :class => "btn btn-success" %>
 <% end %>
