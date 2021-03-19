@@ -5,14 +5,14 @@ This is a straightforward web application that allows users to create and view f
 
 ## Built With
 
-* [Sinatra](http://sinatrarb.com/) - Sinatra, our web framework
-* [sinatra-activerecord](https://github.com/bmizerany/sinatra-activerecord) - Object Relational Mapping
+* [Rails](https://github.com/rails/rails) - Rails (~> 6.1.3)
+* [Ruby](https://github.com/ruby/ruby) - Ruby (3.0.0)
 * [sqlite3](https://rubygems.org/gems/sqlite3/versions/1.3.11)
 
 
 ## Prerequisites
 
-You will need to have Ruby installed on your machine - Linux or Mac.
+You will need to have Ruby and Rails installed on your machine - Linux or Mac.
 
 
 ## Getting Started
