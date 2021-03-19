@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by_id(params[:id])
+        @user_awards = @user.awards.sort_by {|award| award.year}
     end
 
     def new
@@ -13,11 +14,18 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        session[:user_id] = @user.id
         redirect_to user_path(@user)
     end
 
+    def edit
+        @user = User.find_by_id(params[:id])
+    end
+
     def update
+        @user = User.find_by_id(params[:id])
+        @user.awards_name = params[:user][:awards_name]
+        @user.save
+        redirect_to user_path(@user)
     end
 
     private

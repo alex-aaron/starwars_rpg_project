@@ -1,2 +1,31 @@
-<h1><%= @award.year %> <%= link_to @user.awards_name, user_path(@user) %><h1>
-<h3>Best Film: <%= @award.best_film %></h3>
+<h1 class="award-action-header"><%= @award.year %> <%= link_to @award_creator.awards_name, user_path(@award_creator) %></h1>
+<div class="show-awards-button-container">
+    <ul class="award-show-button-list">
+        <li class="award-show-button-list-item" id="award-show-first-button"><%= button_to "Edit", edit_award_path(@award), method: :get  %></li>
+        <li class="award-show-button-list-item"><%= button_to "Delete", award_path(@award), method: :delete, data: { confirm: 'Are you sure?' }  %></li>
+        <li class="award-show-button-list-item"><%= button_to "See Comments", award_comments_path(@award), method: :get  %></li>
+        <li class="award-show-button-list-item"><%= button_to "Add Comment", new_award_comment_path(@award), method: :get  %></li>
+    </ul>
+</div>
+<div class="award-action-awards">
+    <h3 class="award-show-category">Best Film</h3>
+    <h4 class="award-show-winner"><%= @award.best_film %></h4>
+    <h3 class="award-show-category">Best Director</h3> 
+    <h4 class="award-show-winner"><%= @award.best_director %></h4>
+    <h3 class="award-show-category">Best Actor</h3>
+    <h4 class="award-show-winner"><%= @award.best_actor %></h4>
+    <h3 class="award-show-category">Best Actress</h3>
+    <h4 class="award-show-winner"><%= @award.best_actress %></h4>
+    <h3 class="award-show-category">Best Supporting Actor</h3>
+    <h4 class="award-show-winner"><%= @award.best_supporting_actor %></h4>
+    <h3 class="award-show-category">Best Supporting Actress</h3>
+    <h4 class="award-show-winner"><%= @award.best_supporting_actress %></h4>
+    <h3 class="award-show-category">Best Screenplay</h3>
+    <h4 class="award-show-winner"><%= @award.best_screenplay %></h4>
+    <h3 class="award-show-category">Best Cinematography</h3>
+    <h4 class="award-show-winner"><%= @award.best_cinematography %></h4>
+    <h3 class="award-show-category">Best Film Editing</h3>
+    <h4 class="award-show-winner"><%= @award.best_film_editing %></h4>
+    <h3 class="award-show-category">Best Score</h3>
+    <h4 class="award-show-winner"><%= @award.best_score %></h4>
+</div>

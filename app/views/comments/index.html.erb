@@ -1,0 +1,22 @@
+<h1>Comments for <%= @award.year %> <%= @award_creator.awards_name %></h1>
+<div class="show-awards-button-container">
+    <ul class="award-show-button-list">
+        <li class="award-show-button-list-item" id="comments-index-button"><%= button_to "Add Comment", new_award_comment_path(@award), method: :get  %></li>
+    </ul>
+</div><br>
+    <% @award.comments.each do |comment| %>
+        <div class="card">
+         <div class="card-body">
+            <% commenter = User.find_by_id(comment.user_id) %>
+            <p class="card-title"><strong><%= commenter.awards_name %></strong></p>
+            <p class="card-text"><%= comment.content %></p>
+            <% if commenter.id == current_user.id %>
+                    <a href="/awards/<%= @award.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary" id="comments-index-edit">Edit</a><br>
+                    <form action="/awards/<%= @award.id %>/comments/<%= comment.id %>" method="POST">
+                    <input type="hidden" id="hidden" name="_method" value="DELETE">
+                    <input type="submit", value="Delete", class='btn btn-warning' %>
+                    </form>
+            <% end %>
+        </div>
+       </div>
+    <% end %>

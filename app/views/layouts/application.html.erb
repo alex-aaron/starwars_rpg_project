@@ -5,17 +5,203 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+
+
+    @font-face {
+      font-family: 'DeathStar-VmWB';
+      src: url('/assets/DeathStar-VmWB.ttf');
+    }
+
+
+    #welcome-text {
+      font-family: 'DeathStar-VmWB';
+      text-align: center;
+    }
+
+      body {
+        padding: 10px;
+        background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+        color: back;
+      }
+      
+      .header {
+        background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+        padding: 0px;
+        margin: 0px;
+        border-radius: 10px;
+      }
+
+      .welcome-button-container {
+        padding: 10px;
+    }
+    .welcome-button {
+        border-color: #232946;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 10px;
+        margin-left: 600px;
+        margin-right: 600px;
+    }
+
+    .welcome-button-text {
+        text-align: center;
+    }
+
+    #welcome-description {
+      text-align: center;
+    }
+
+      .nav-list-item {
+        float: right;
+      }
+
+      #nav-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+      .nav-link {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      #logout-button {
+        padding: 10px;
+        color: black;
+      }
+
+      .awards-action-header {
+        text-align: center;
+      }
+
+      .awards-action-container {
+        border-color: #232946;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 400px;
+        margin-right: 400px;
+    }
+
+    .awards-action-items {
+      padding: 10px;
+    }
+
+    .awards-action-input {
+      width: 500px;
+    }
+
+    .award-show-button-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .award-show-button-list-item {
+      float: left;
+      padding: 5px;
+    }
+
+    .award-show-category {
+      margin-left: 5px;
+      text-decoration: underline;
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .award-show-winner {
+      margin-left: 5px;
+      font-family: 'EB Garamond', serif;
+    }
+
+    .award-action-header {
+      font-family: 'Cinzel', serif;
+    }
+
+    #comments-index-button {
+      padding: 0px;
+    }
+
+    .comments-container {
+      border-color: black;
+      border-width: 5px;
+      border-style: solid;
+    }
+
+    .comment-content {
+      padding: 5px;
+      
+    }
+
+    .card {
+      border-color: #232946;
+      border-width: 5px;
+      border-style: solid;
+      border-radius: 10px;
+      margin-bottom: 20px;
+
+  }
+
+    .card-body {
+      padding: 5px;
+    }
+
+    #comments-index-edit {
+      margin-bottom: 3px;
+    }
+
+    .award-years-list-container {
+      display: inline;
+    }
+
+    .award-years-list {
+      display: inline;
+    }
+
+    .award-years-list-item-container {
+      display: inline;
+    }
+
+    #award-years-list-item {
+      display: inline;
+      padding: 10px;
+    }
+    
+    </style>
   </head>
 
   <body>
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
   <div class="header">
     <nav>
         <ul id="nav-list">
-            <li class="nav-list-item"><a href="/" class ="nav-link">Home</a></li>
-            <li class="nav-list-item"><a href="/logout" class="nav-link">Logout</a></li>
+            <li id="logout-button" class="nav-list-item"><%= button_to "Home", '/', method: :get  %></li>
+            <li id="logout-button" class="nav-list-item"><%= button_to "Logout", destroy_user_session_path, method: :delete  %></li>
+            <li id="logout-button" class="nav-list-item"><%= button_to "Awards", awards_path, method: :get  %></li>
+            <li id="logout-button" class="nav-list-item"><%= button_to "Create Awards", new_award_path, method: :get  %></li>
         </ul>
     </nav>
 </div>

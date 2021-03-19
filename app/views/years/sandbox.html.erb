@@ -1,0 +1,8 @@
+<h2>Click on the Awards Name to view awards</h1>
+<ul>
+    <% @awards.each do |award| %>
+        <% if award.year == @year %>
+        <% user = User.find_by_id(award.user_id) %>
+        <li><%= link_to user.awards_name, award_path(award) %></li>
+    <% end %>
+</ul>

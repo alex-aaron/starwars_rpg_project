@@ -1,0 +1,15 @@
+<form action="/awards/<%= @award.id %>" method="POST">
+    <textarea row="10" cols="50" name="content">Enter your comment here</textarea><br>
+    <input type="submit" value="Add Comment">
+</form>
+
+<h1><%= @award.year %> <%= @award_creator.awards_name %></h1>
+
+<%= form_tag ({controller: 'comments', action: 'create', method: 'post'}) do %>
+    <textarea rows="10" cols="50" name="content">Enter comment</textarea><br>
+    <input type="submit" value="Add Comment">
+<% end %>
+
+<%= form_tag award_comment_path(comment.id), method: :delete do %>
+    <input type="submit", value="Delete", class='btn btn-warning' %>
+<% end %>

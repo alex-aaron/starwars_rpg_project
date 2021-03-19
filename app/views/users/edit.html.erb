@@ -1,0 +1,7 @@
+<h1>Before you can begin creating awards, you have to tell us what your awards are called!</h1>
+<h2>Awards Name</h2>
+<%= form_for(@user) do |f| %>
+    <%= f.label "Awards Name" %><br>
+    <%= f.text_field :awards_name %><br><br>
+    <%= f.submit "Create Awards Name" %>
+<% end %>

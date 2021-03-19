@@ -1,0 +1,9 @@
+<h1><%= @year %></h1>
+<ul>
+    <% @awards.each do |award| %>
+        <% if award.year == @year || award.year == "Sample Awards" %>
+        <% user = User.find_by_id(award.user_id) %>
+        <li><%= link_to user.awards_name, award_path(award) %></li>
+        <% end %>
+    <% end %>
+</ul>
