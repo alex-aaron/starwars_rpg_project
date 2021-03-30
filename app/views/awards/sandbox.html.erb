@@ -44,3 +44,29 @@
             <li class="award-years-list-item"><a href="awards/years/<%= year %>"><%= year %><a></li>
         <% end %>
     <ul>
+
+    <% if comment_index[1].length > 1 %>
+           <% comment_index.each do |commented_award| %>
+                <% award_creator = User.find_by_id(commented_award.user_id) %>
+                <li><%= commented_award.year %> <%= award_creator %><li>
+           <% end %>
+        <% else %>
+            <% award_creator = User.find_by_id(comment_index[1].user_id) %>
+            <li><%= comment_index[1].year %> <%= award_creator %></li>
+        <% end %>
+
+        <% @most_comments.each do |comment_index| %>
+            <h3><%= comment_index[0].to_s %> Comments:</h3>
+            <ul>
+            <% if comment_index[1].length > 1 %>
+                <% asc_order_array = comment_index[1].sort_by {|obj| obj.year} %>
+                <% asc_order_array.each do |commented_award| %>
+                    <% award_creator = User.find_by_id(commented_award.user_id) %>
+                    <li><a href="/awards/<%= commented_award.id %>"><%= commented_award.year %> <%= award_creator.awards_name %></a></li>
+                <% end %>
+            <% else %>
+                <% award_creator = User.find_by_id(comment_index[1][0].user_id) %>
+                <li><a href="/awards/<%= comment_index[1][0].id %>"><%= comment_index[1][0].year %> <%= award_creator.awards_name %></a></li>
+            <% end %>
+            </ul>
+        <% end %>

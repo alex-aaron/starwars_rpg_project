@@ -1,0 +1,8 @@
+<h1>Most Commented Awards</h1>
+<ul>
+<% @really_most_comments.reverse.each do |award| %>
+    <% num_comments = award.comments.length %>
+    <% award_creator = User.find_by_id(award.user_id) %>
+    <li><a href="/awards/<%= award.id %>"><%= award.year %> <%= award_creator.awards_name %>... <%= num_comments %> comments</a></li>
+<% end %>
+</ul>

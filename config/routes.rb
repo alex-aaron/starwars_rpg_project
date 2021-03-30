@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get '/' => "static#home"
   get '/login' => "sessions#new"
   get '/logout' => "sessions#destroy"
+  get '/most-comments' => "awards#most_comments"
   delete '/awards/:id' => "awards#destroy"
   get '/awards/years/:slug' => "years#show"
+  get '/newest-awards' => "awards#newest"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

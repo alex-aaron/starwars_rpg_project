@@ -1,0 +1,7 @@
+<h1>Newest Awards</h1>
+<% @newest_awards.each do |award| %>
+    <% award_creator = User.find_by_id(award.user_id) %>
+    <div class="newest-awards">
+        <h4><a href="/awards/<%= award.id %>"><%= award.year %> <%= award_creator.awards_name %></a>... Created: <%= award.created_at.strftime("%B %e, %Y, %l:%M") %></h4>
+    </div>
+<% end %>

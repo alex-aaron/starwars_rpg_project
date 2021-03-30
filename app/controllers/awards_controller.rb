@@ -65,6 +65,15 @@ class AwardsController < ApplicationController
         end
     end
 
+    def most_comments
+        @most_comments = Award.most_comments_sorted_array
+        @really_most_comments = Award.all.sort_by {|award| award.comments.length}
+    end
+
+    def newest
+        @newest_awards = Award.newest_awards
+    end
+
     def destroy
         award = Award.find_by_id(params[:id])
         if user_signed_in?
