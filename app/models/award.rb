@@ -24,26 +24,26 @@ class Award < ApplicationRecord
         year_array.uniq.sort!
     end
 
-    def self.most_comments_hash
-        most_comments_hash = {}
-        Award.all.each do |award|
-            if most_comments_hash[award.comments.length] 
-                most_comments_hash[award.comments.length] << award
-            else
-                most_comments_hash[award.comments.length] = []
-                most_comments_hash[award.comments.length] << award
-            end
-        end
-        most_comments_hash
-    end
+    # def self.most_comments_hash
+    #     most_comments_hash = {}
+    #     Award.all.each do |award|
+    #         if most_comments_hash[award.comments.length] 
+    #             most_comments_hash[award.comments.length] << award
+    #         else
+    #             most_comments_hash[award.comments.length] = []
+    #             most_comments_hash[award.comments.length] << award
+    #         end
+    #     end
+    #     most_comments_hash
+    # end
 
-    def self.most_comments_sorted_array
-        most_comments_hash = Award.most_comments_hash
-        sorted_array = []
-        most_comments_hash.each_with_index do |key, value|
-            sorted_array << key
-        end
-        sorted_array.sort.reverse
-    end
+    # def self.most_comments_sorted_array
+    #     most_comments_hash = Award.most_comments_hash
+    #     sorted_array = []
+    #     most_comments_hash.each_with_index do |key, value|
+    #         sorted_array << key
+    #     end
+    #     sorted_array.sort.reverse
+    # end
 
 end

@@ -23,7 +23,7 @@
 
     @font-face {
       font-family: 'DeathStar-VmWB';
-      src: url('/assets/DeathStar-VmWB.ttf');
+      src: url('assets/DeathStar-VmWB.ttf');
     }
 
 
@@ -191,6 +191,7 @@
             <li id="logout-button" class="nav-list-item"><%= button_to "Logout", destroy_user_session_path, method: :delete  %></li>
             <li id="logout-button" class="nav-list-item"><%= button_to "Awards", awards_path, method: :get  %></li>
             <li id="logout-button" class="nav-list-item"><%= button_to "Create Awards", new_award_path, method: :get  %></li>
+            <li id="logout-button" class="nav-list-item"><%= button_to "Best Supporting Actresses", '/best-supporting-actresses', method: :get  %></li>
         </ul>
     </nav>
 </div>

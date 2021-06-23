@@ -74,6 +74,10 @@ class AwardsController < ApplicationController
         @newest_awards = Award.newest_awards
     end
 
+    def best_supporting_actresses
+        @best_supporting_actresses = Award.pluck(:best_supporting_actress).uniq
+    end
+
     def destroy
         award = Award.find_by_id(params[:id])
         if user_signed_in?

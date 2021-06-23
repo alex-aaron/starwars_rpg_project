@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   delete '/awards/:id' => "awards#destroy"
   get '/awards/years/:slug' => "years#show"
   get '/newest-awards' => "awards#newest"
+  get '/best-supporting-actresses' => "awards#best_supporting_actresses"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
